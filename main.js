@@ -1,3 +1,20 @@
+let mouseDown = false;
+
+document.addEventListener('mousedown', function (e) {
+
+    var buttons = e.buttons;
+
+    if ((buttons & 1) === 1) {
+
+        mouseDown = true;
+    }
+});
+
+document.addEventListener('mouseup', function () {
+
+    mouseDown = false;
+
+});
 
 function setCanvas() {
     clearCanvas();
@@ -23,6 +40,7 @@ function setCanvas() {
             newPixel.onclick = function() {
                 newPixel.style.backgroundColor = 'red';
             }
+            newPixel.addEventListener("mouseover", hoverColor);
             newRow.appendChild(newPixel);
         }
     }
@@ -48,7 +66,12 @@ function clearCanvas()
 
 function colorChange()
 {
-    const el = document.getElementById(event.target.id);
-    el.style.backgroundColor = 'red';
+    this.style.backgroundColor = 'red';
 }
 
+function hoverColor() {
+    if(mouseDown)
+    {
+        this.style.backgroundColor = 'red';
+    }
+}
