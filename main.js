@@ -4,7 +4,8 @@ function setCanvas() {
 
 
     let input = parseInt(document.getElementById('userInput').value);
-    let pixelMeasure = 978.0/input;
+    let pixelMeasure = 900.0/input;
+    console.log(pixelMeasure);
 
     for(i=0; i<input; i++)
     {

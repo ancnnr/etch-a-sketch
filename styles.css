@@ -1,5 +1,5 @@
 * {
-    border: 2px solid red;
+    border: 1px solid red;
 }
 
 body {
@@ -36,8 +36,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 978px;
-    height: 978px;
+    width: 900x;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
 .header {
@@ -45,18 +47,22 @@ body {
     height: 15vh;
     flex-basis:auto;
     width: 100%;
+    flex-shrink: 2;
 }
 
 
 .canvas {
     background-color: #fff982;
     display: flex;
-    width: 100%;
-    height: 70vh;
+    width: 900px;
+    height: 900px;
     justify-content: center;
     align-items: center;
     flex: 1 1 auto;
     flex-direction: column;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
 }
 
 .row {
@@ -64,10 +70,14 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .pixel {
     height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .footer {
@@ -75,4 +85,4 @@ body {
     height: 15vh;
     flex-basis:auto;
     width: 100%;
-}
+    flex-shrink: 2;
