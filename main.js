@@ -20,6 +20,9 @@ function setCanvas() {
             const newPixel = document.createElement('div');
             newPixel.classList.add('pixel');
             newPixel.style.width = pixelMeasure + 'px';
+            newPixel.onclick = function() {
+                newPixel.style.backgroundColor = 'red';
+            }
             newRow.appendChild(newPixel);
         }
     }
@@ -43,3 +46,8 @@ function clearCanvas()
     }
 }
 
+function colorChange()
+{
+    const el = document.getElementById(event.target.id);
+    el.style.backgroundColor = 'red';
+}
