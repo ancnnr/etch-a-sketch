@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="coloris.css">
     <script src="main.js"></script>
+    <script src="coloris.js"></script>
     <title>Etch-A-Sketch</title>
 </head>
 <body>
@@ -15,6 +17,7 @@
                 <input id="userInput" type="number" placeholder="Num Rows/Cols">
                 <button class="btn1" onclick="setCanvas()">Generate Canvas</button>
                 <button class="btn2" onclick="clearCanvas()">Clear canvas</button>
+                <input type="text" class="coloris" value="rgb(255,0,0)" />
                 <button class="btn3">Click Me 3</button>
             </div>
             
@@ -34,5 +37,12 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        Coloris({
+            el: '.coloris',
+            themeMode: 'dark',
+        });
+    </script>
 </body>
 </html>

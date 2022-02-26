@@ -51,3 +51,4 @@ function colorChange()
     const el = document.getElementById(event.target.id);
     el.style.backgroundColor = 'red';
 }
+
