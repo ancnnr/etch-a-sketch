@@ -32,7 +32,7 @@ function setCanvas() {
 
 
     let input = parseInt(document.getElementById('userInput').value);
-    let pixelMeasure = 900.0/input;
+    let pixelMeasure = 600.0/input;
     console.log(pixelMeasure);
 
     for(i=0; i<input; i++)
@@ -48,9 +48,7 @@ function setCanvas() {
             const newPixel = document.createElement('div');
             newPixel.classList.add('pixel');
             newPixel.style.width = pixelMeasure + 'px';
-            newPixel.addEventListener('mousedown', function() {
-                this.style.backgroundColor = document.getElementById('color-picker').value;
-            });
+            newPixel.addEventListener('mousedown', colorChange);
             newPixel.addEventListener("mouseover", hoverColor);
             newRow.appendChild(newPixel);
         }
@@ -85,7 +83,7 @@ function colorChange()
     else {
         this.style.backgroundColor = document.getElementById('color-picker').value;
     }
-    
+
 }
 
 function hoverColor() {
@@ -116,4 +114,13 @@ function eraser()
         erase = true;
     }
 
+}
+
+function eraseCanvas()
+{
+    const allPixels = document.querySelectorAll('.pixel');
+
+    allPixels.forEach(function(pix) {
+        pix.style.backgroundColor = 'white';
+    });
 }

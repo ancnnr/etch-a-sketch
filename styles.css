@@ -54,8 +54,8 @@ body {
 .canvas {
     background-color: #fff982;
     display: flex;
-    width: 900px;
-    height: 900px;
+    width: 600px;
+    height: 600px;
     justify-content: center;
     align-items: center;
     flex: 1 1 auto;
@@ -78,6 +78,7 @@ body {
     height: 100%;
     padding: 0;
     margin: 0;
+    background-color: white;
 }
 
 .footer {
@@ -89,5 +90,4 @@ body {
 }
 
 .erasing {
-    background-color: #f582ff;
-}
+    background-color: blue}
