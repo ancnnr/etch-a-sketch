@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    height: 90vh;
 }
 
 .left-main {
@@ -21,7 +21,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 15vw;
-    height: 100vh;
 }
 
 .button_house {
@@ -31,6 +30,22 @@ body {
     align-items: center;
 }
 
+button {
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    width: 100%;
+    margin: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #292929;
+    color: white
+}
 .right-main {
     
     display: flex;
@@ -48,6 +63,11 @@ body {
     flex-basis:auto;
     width: 100%;
     flex-shrink: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vh;
+    font-weight: 700;
 }
 
 
@@ -88,6 +108,11 @@ body {
     flex-basis:auto;
     width: 100%;
     flex-shrink: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 2vh;
+    font-style: italic;
 }
 
 .erasing {
