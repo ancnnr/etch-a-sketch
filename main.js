@@ -1,20 +1,30 @@
+let paintColor= 'rgb(255,0,0)';
 let mouseDown = false;
 
-document.addEventListener('mousedown', function (e) {
+function loadFunction() {
+    //allow dragging to color pixels
+   
 
-    var buttons = e.buttons;
+    document.addEventListener('mousedown', function (e) {
 
-    if ((buttons & 1) === 1) {
+        var buttons = e.buttons;
 
-        mouseDown = true;
-    }
-});
+        if ((buttons & 1) === 1) {
 
-document.addEventListener('mouseup', function () {
+            mouseDown = true;
+        }
+    });
 
-    mouseDown = false;
+    document.addEventListener('mouseup', function () {
 
-});
+        mouseDown = false;
+
+    });
+
+
+
+}
+
 
 function setCanvas() {
     clearCanvas();
@@ -37,9 +47,9 @@ function setCanvas() {
             const newPixel = document.createElement('div');
             newPixel.classList.add('pixel');
             newPixel.style.width = pixelMeasure + 'px';
-            newPixel.onclick = function() {
-                newPixel.style.backgroundColor = 'red';
-            }
+            newPixel.addEventListener('mousedown', function() {
+                this.style.backgroundColor = document.getElementById('color-picker').value;
+            });
             newPixel.addEventListener("mouseover", hoverColor);
             newRow.appendChild(newPixel);
         }
@@ -66,12 +76,12 @@ function clearCanvas()
 
 function colorChange()
 {
-    this.style.backgroundColor = 'red';
+    this.style.backgroundColor = document.getElementById('color-picker').value;
 }
 
 function hoverColor() {
     if(mouseDown)
     {
-        this.style.backgroundColor = 'red';
+        this.style.backgroundColor = document.getElementById('color-picker').value;
     }
 }
