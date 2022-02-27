@@ -1,5 +1,6 @@
 let paintColor= 'rgb(255,0,0)';
 let mouseDown = false;
+let erase = false;
 
 function loadFunction() {
     //allow dragging to color pixels
@@ -76,12 +77,43 @@ function clearCanvas()
 
 function colorChange()
 {
-    this.style.backgroundColor = document.getElementById('color-picker').value;
+    if(erase)
+    {
+        this.style.backgroundColor = 'white';
+    }
+
+    else {
+        this.style.backgroundColor = document.getElementById('color-picker').value;
+    }
+    
 }
 
 function hoverColor() {
     if(mouseDown)
     {
-        this.style.backgroundColor = document.getElementById('color-picker').value;
+        if(erase)
+        {
+            this.style.backgroundColor = 'white';
+        }
+
+        else {
+            this.style.backgroundColor = document.getElementById('color-picker').value;
+        }
+        
     }
+}
+
+function eraser()
+{
+    if(erase)
+    {
+        document.querySelector('.btn3').classList.remove('erasing');
+        erase = false;
+    }
+
+    else {
+        document.querySelector('.btn3').classList.add('erasing');
+        erase = true;
+    }
+
 }
