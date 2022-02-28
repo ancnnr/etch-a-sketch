@@ -22,7 +22,7 @@ function loadFunction() {
 
     });
 
-
+    setCanvas();
 
 }
 
@@ -32,8 +32,12 @@ function setCanvas() {
 
 
     let input = parseInt(document.getElementById('userInput').value);
+    if (isNaN(input))
+    {
+        input = 20;
+    }
+
     let pixelMeasure = 600.0/input;
-    console.log(pixelMeasure);
 
     for(i=0; i<input; i++)
     {
